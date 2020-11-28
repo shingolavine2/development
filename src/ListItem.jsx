@@ -1,19 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import uuid from 'react-uuid';
 
 export default class ListItem extends React.Component {
   constructor(props) {
     super(props);
-      this.state = {
-        available: 1
-      };
-      this.makeAvailable = this.makeAvailable.bind(this);
+      this.addItself = this.addItself.bind(this);
   }
-  makeAvailable() {
-    this.setState({
-      available: this.state.available + 1
-    });
+  addItself() {
+    this.props.addToView(this.props.item, uuid());
   }
   render() {
     return (
@@ -26,8 +22,9 @@ export default class ListItem extends React.Component {
             <p>Type: {this.props.item.type}</p>
             <p>Coolness: {this.props.item.coolness}</p>
             <p>Power: {this.props.item.power}</p>
+            <p>Power: ${this.props.item.price}</p>
           </Card.Text>
-          <Button variant="primary">Add To Cart</Button>
+          <Button onClick={this.addItself} variant="primary">Add To Cart</Button>
         </Card.Body>
       </Card>
 
