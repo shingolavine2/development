@@ -22,7 +22,7 @@ export default class ListItem extends React.Component {
             <p>Type: {this.props.item.type}</p>
             <p>Coolness: {this.props.item.coolness}</p>
             <p>Power: {this.props.item.power}</p>
-            <p>Power: ${this.props.item.price}</p>
+            <p>Price: ${this.props.item.price}</p>
           </Card.Text>
           <Button onClick={this.addItself} variant="primary">Add To Cart</Button>
         </Card.Body>

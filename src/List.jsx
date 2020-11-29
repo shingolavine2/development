@@ -110,9 +110,9 @@ export default class List extends React.Component {
             <Card.Body>
               <Card.Title>Active Filters</Card.Title>
               <Card.Text>
-                <p>Type: {this.state.type}</p>
-                <p>Coolness: {this.state.coolness}</p>
-                <p>Sort Direction: {this.state.direction}</p>
+                <p>Type: <b>{this.state.type}</b></p>
+                <p>Coolness: <b>{this.state.coolness}</b></p>
+                <p>Sort Direction: <b>{this.state.direction}</b></p>
                 <Nav className="flex-column">
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
